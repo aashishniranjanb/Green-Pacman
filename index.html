@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Eco-Grid Defender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-header">
+            <h1 class="game-title">ECO-GRID DEFENDER</h1>
+            <div class="score-container">
+                <div>SCORE: <span id="score">0</span></div>
+                <div>HIGH SCORE: <span id="highScore">0</span></div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="game-overlay">
+            <h2 id="overlay-title">LEVEL 1</h2>
+            <button id="start-button">START</button>
+            <p id="overlay-message">Collect all energy orbs. Avoid the polluters!</p>
+        </div>
+    </div>
+
+    <div id="controls">
+        <div class="row">
+            <button class="ctrl" data-dir="up"><i class="fas fa-arrow-up"></i></button>
+        </div>
+        <div class="row">
+            <button class="ctrl" data-dir="left"><i class="fas fa-arrow-left"></i></button>
+            <button class="ctrl" data-dir="down"><i class="fas fa-arrow-down"></i></button>
+            <button class="ctrl" data-dir="right"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

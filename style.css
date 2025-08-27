@@ -1,0 +1,146 @@
+:root {
+    --primary-green: #00ffae;
+    --dark-bg: #0d0c1d;
+    --grid-bg: #1a1a2e;
+    --wall-color: #16213e;
+    --glow: 0 0 5px var(--primary-green), 0 0 10px var(--primary-green), 0 0 15px #fff;
+}
+
+body {
+    margin: 0;
+    background: var(--dark-bg);
+    font-family: 'Turret Road', cursive;
+    color: var(--primary-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Max width for larger screens */
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#ui-header {
+    width: 100%;
+    text-align: center;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    text-shadow: var(--glow);
+    margin: 0 0 10px 0;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#gameCanvas {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--grid-bg);
+    border: 3px solid var(--primary-green);
+    box-shadow: var(--glow);
+    border-radius: 15px;
+}
+
+#game-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(22, 33, 62, 0.85);
+    border: 2px solid var(--primary-green);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+#overlay-title {
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+    text-shadow: var(--glow);
+}
+
+#start-button {
+    font-family: 'Turret Road', cursive;
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--primary-green);
+    transition: all 0.2s ease;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary-green);
+}
+
+#overlay-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+#controls {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#controls .row {
+    display: flex;
+    gap: 15px;
+}
+
+.ctrl {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    color: var(--primary-green);
+    margin: 5px;
+    text-shadow: var(--glow);
+    box-shadow: inset 0 0 10px rgba(0, 255, 174, 0.5);
+    transition: all 0.2s ease;
+}
+
+.ctrl:active {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+}
+
+/* Hide controls on larger screens where keyboards are likely used */
+@media (min-width: 768px) {
+    #controls {
+        display: none;
+    }
+}
